@@ -1,0 +1,14 @@
+{
+  "name": "sound-alerts",
+  "description": "Marketplace personale di Paolo Furesi: plugin di effetti sonori meme per Claude Code.",
+  "owner": {
+    "name": "Paolo Furesi"
+  },
+  "plugins": [
+    {
+      "name": "claude-sound-alerts",
+      "source": "./",
+      "description": "Effetti sonori meme virali per i momenti in cui Claude Code si ferma (permesso / domanda / completato)."
+    }
+  ]
+}

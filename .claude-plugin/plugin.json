@@ -1,0 +1,9 @@
+{
+  "name": "claude-sound-alerts",
+  "version": "1.2.3",
+  "description": "Effetti sonori meme virali quando Claude Code si ferma: serve un permesso, sta facendo una domanda, oppure ha completato. Pensato per chi lavora in auto mode e vuole accorgersene senza fissare lo schermo.",
+  "author": {
+    "name": "Paolo Furesi"
+  },
+  "keywords": ["hooks", "sound", "notifications", "auto-mode", "meme"]
+}

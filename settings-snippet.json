@@ -1,0 +1,48 @@
+{
+  "_commento": "FALLBACK senza plugin. Incolla il blocco 'hooks' dentro ~/.claude/settings.json (merge, non sovrascrivere). Sostituisci PLUGIN_DIR con il path reale della tua clone del progetto. Usalo solo se NON installi il plugin via marketplace.",
+  "_PLUGIN_DIR": "/percorso/della/tua/clone/claude-sound-alerts",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"PLUGIN_DIR/scripts/turn-start.sh\""
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"PLUGIN_DIR/scripts/play.sh\" permission"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "AskUserQuestion",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"PLUGIN_DIR/scripts/play.sh\" question"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"PLUGIN_DIR/scripts/play.sh\" done"
+          }
+        ]
+      }
+    ]
+  }
+}

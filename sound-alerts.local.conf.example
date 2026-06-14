@@ -1,0 +1,24 @@
+# claude-sound-alerts — configurazione locale
+# Copia questo file in:  ~/.claude/sound-alerts.local.conf
+# Vive FUORI dalla cache del plugin: sopravvive a reinstall/update.
+# Tutte le chiavi sono opzionali. File assente = tutti i default.
+
+# Master on/off (false / 0 / no spengono tutto).
+enabled=true
+
+# Volume 0.0–1.0 (passato a afplay -v). Default 1.0.
+volume=0.6
+
+# Fanfara di completamento (categoria 'done'):
+#   worked = suona solo se il turno è durato almeno doneMinSeconds (auto-adattivo)
+#   always = a ogni fine turno
+doneMode=worked
+doneMinSeconds=15
+
+# Disattiva un SINGOLO suono: "disabled=<categoria>/<nomefile-senza-.mp3>".
+# Categorie: permission | question | done
+#disabled=question/sus
+#disabled=done/continued
+
+# Disattiva un'INTERA categoria:
+#disabled=done
