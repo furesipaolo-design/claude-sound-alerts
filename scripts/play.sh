@@ -75,7 +75,38 @@ for f in "$DIR"/*.mp3; do
   files+=("$f")
 done
 [ ${#files[@]} -eq 0 ] && skip "pool vuoto"
-pick="${files[$((RANDOM % ${#files[@]}))]}"
+
+# --- Rotazione "shuffle bag": ogni suono esce UNA volta prima che il giro ricominci.
+#     (Il vecchio RANDOM%N era senza memoria → ripetizioni ravvicinate e suoni "sfortunati".)
+#     Stato per-categoria, condiviso tra sessioni; vive in $STATEDIR (default /tmp).
+STATEDIR="${SOUND_ALERTS_STATE_DIR:-/tmp}"
+BAG="$STATEDIR/claude-sound-alerts.bag.$CAT"
+BAGLAST="$STATEDIR/claude-sound-alerts.bag.$CAT.last"
+
+# remaining = file non ancora estratti nel giro corrente.
+remaining=()
+for f in "${files[@]}"; do
+  b="$(/usr/bin/basename "$f" .mp3)"
+  [ -f "$BAG" ] && /usr/bin/grep -qxF "$b" "$BAG" 2>/dev/null && continue
+  remaining+=("$f")
+done
+
+# Giro completo (o stato vuoto/obsoleto) → si ricomincia, evitando di ripetere
+# subito l'ultimo suonato quando il pool ha più di un file.
+if [ ${#remaining[@]} -eq 0 ]; then
+  last=""; [ -f "$BAGLAST" ] && last="$(/bin/cat "$BAGLAST" 2>/dev/null)"
+  for f in "${files[@]}"; do
+    b="$(/usr/bin/basename "$f" .mp3)"
+    [ ${#files[@]} -gt 1 ] && [ "$b" = "$last" ] && continue
+    remaining+=("$f")
+  done
+  : > "$BAG" 2>/dev/null
+fi
+
+pick="${remaining[$((RANDOM % ${#remaining[@]}))]}"
+pickbase="$(/usr/bin/basename "$pick" .mp3)"
+printf '%s\n' "$pickbase" >> "$BAG" 2>/dev/null
+printf '%s' "$pickbase" > "$BAGLAST" 2>/dev/null
 
 # Riproduzione (player cross-platform; sempre in background, mai bloccante).
 if [ -n "${SOUND_ALERTS_DRYRUN:-}" ]; then

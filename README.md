@@ -2,15 +2,15 @@
 
 **English** · [Italiano](#-claude-sound-alerts--italiano)
 
-A plugin for **Claude Code** that fires a **viral meme sound effect** every time Claude stops — so, while working in **auto mode**, you notice it without staring at the screen. Three situations, three distinct sound families (each a randomly-rotating pool, so they don't get old).
+A plugin for **Claude Code** that fires a **viral meme sound effect** every time Claude stops — so, while working in **auto mode**, you notice it without staring at the screen. Three situations, three distinct sound families (each a **shuffle-bag** pool — every sound plays once before any repeats, so they don't get old).
 
 ## What plays, and when
 
 | Situation | When it fires | Hook | Sound pool |
 |---|---|---|---|
-| 🟡 **Needs permission** | Claude stops waiting for your approval | `Notification` / `permission_prompt` | vine boom · bruh · emotional damage · FAHHH · oof · dramatic fart · GTA wasted · no god please no · just do it · alerta · mission failed · fatality · titanic flute fail |
-| 🔵 **Question** | Claude uses the multiple-choice question tool | `PreToolUse` / `AskUserQuestion` | huh? · what? · sus · oh my god · mario jump · a few moments later · we'll be right back · his name is Jeff · why are you running · crickets · sorry bro · pause that · luigi gibberish |
-| 🟢 **Done** | Claude finished its turn and hands you back control | `Stop` | GTA mission passed · to be continued · taco bell · ta-da · okay · wow · sheesh · heavenly music · turn down for what · monte · pretty good · hehe boi · easy · noice · max verstappen · abrakadabra |
+| 🟡 **Needs permission** | Claude stops waiting for your approval | `Notification` / `permission_prompt` | vine boom · bruh · emotional damage · FAHHH · dramatic fart · GTA wasted · no god please no · just do it · alerta · titanic flute fail |
+| 🔵 **Question** | Claude uses the multiple-choice question tool | `PreToolUse` / `AskUserQuestion` | huh? · what? · sus · mario jump · a few moments later · his name is Jeff · crickets · sorry bro · pause that |
+| 🟢 **Done** | Claude finished its turn and hands you back control | `Stop` | GTA mission passed · to be continued · wow · heavenly music · turn down for what · monte · pretty good · hehe boi · easy · noice · abrakadabra |
 
 Why these three triggers: in auto mode Claude doesn't stop between tools, so **Stop** coincides with the real "I'm done"; **permission** and **question** are the only other moments when you actually need to get back to the keyboard.
 
@@ -123,15 +123,15 @@ The effects are short meme clips taken from **[myinstants.com](https://www.myins
 
 [English](#-claude-sound-alerts) · **Italiano**
 
-Plugin per **Claude Code** che spara un **effetto sonoro meme virale** ogni volta che Claude si ferma — così, lavorando in **auto mode**, te ne accorgi senza fissare lo schermo. Tre situazioni, tre famiglie di suoni distinte (e un pool a rotazione casuale per ognuna, così non stancano).
+Plugin per **Claude Code** che spara un **effetto sonoro meme virale** ogni volta che Claude si ferma — così, lavorando in **auto mode**, te ne accorgi senza fissare lo schermo. Tre situazioni, tre famiglie di suoni distinte (un pool **shuffle-bag** per ognuna — ogni suono esce una volta prima di ripetersi, così non stancano).
 
 ## Cosa suona, e quando
 
 | Situazione | Quando scatta | Hook | Pool di suoni |
 |---|---|---|---|
-| 🟡 **Serve un permesso** | Claude si ferma perché aspetta una tua approvazione | `Notification` / `permission_prompt` | vine boom · bruh · emotional damage · FAHHH · oof · dramatic fart · GTA wasted · no god please no · just do it · alerta · mission failed · fatality · titanic flute fail |
-| 🔵 **Domanda (questionario)** | Claude usa lo strumento di domanda a scelta multipla | `PreToolUse` / `AskUserQuestion` | huh? · what? · sus · oh my god · mario jump · a few moments later · we'll be right back · his name is Jeff · why are you running · crickets · sorry bro · pause that · luigi gibberish |
-| 🟢 **Completato** | Claude ha finito il turno e ti ridà la palla | `Stop` | GTA mission passed · to be continued · taco bell · ta-da · okay · wow · sheesh · heavenly music · turn down for what · monte · pretty good · hehe boi · easy · noice · max verstappen · abrakadabra |
+| 🟡 **Serve un permesso** | Claude si ferma perché aspetta una tua approvazione | `Notification` / `permission_prompt` | vine boom · bruh · emotional damage · FAHHH · dramatic fart · GTA wasted · no god please no · just do it · alerta · titanic flute fail |
+| 🔵 **Domanda (questionario)** | Claude usa lo strumento di domanda a scelta multipla | `PreToolUse` / `AskUserQuestion` | huh? · what? · sus · mario jump · a few moments later · his name is Jeff · crickets · sorry bro · pause that |
+| 🟢 **Completato** | Claude ha finito il turno e ti ridà la palla | `Stop` | GTA mission passed · to be continued · wow · heavenly music · turn down for what · monte · pretty good · hehe boi · easy · noice · abrakadabra |
 
 Perché proprio questi tre trigger: in auto mode Claude non si ferma tra un tool e l'altro, quindi lo **Stop** coincide con il vero "ho finito"; il **permesso** e la **domanda** sono gli unici altri momenti in cui ti serve davvero tornare alla tastiera.
 
