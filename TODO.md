@@ -35,6 +35,7 @@ all peak-normalized to −1 dBFS. Cross-platform player (afplay / ffplay / mpv /
       −13.6 LUFS) and `sorrybro` (trimmed the duplicated second utterance, 4.0s → 1.3s). +2 tests.
 
 ## Nice-to-have
+- [ ] Further refine the shuffle-bag rotation (tuning / heuristics) — revisit when/if it proves worthwhile.
 - [ ] More "of-the-moment" viral variants in the pools (periodic refresh from myinstants).
 - [ ] Targeted trim of the >6s clips whose punchline lands after the cap (e.g. `titanicfail`).
 - [ ] Submit to the official Anthropic plugin marketplace (separate submission).
